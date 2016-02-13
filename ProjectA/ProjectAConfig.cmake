@@ -1,0 +1,5 @@
+set(ProjectA_INCLUDE_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../include/")
+set(ProjectA_INCLUDE_DIRS ${ProjectA_INCLUDE_DIR})
+find_library(ProjectA_LIBRARY_PATH ProjectA HINTS "${CMAKE_CURRENT_LIST_DIR}/../../")
+set(ProjectA_LIBRARY ${ProjectA_LIBRARY_PATH})
+set(ProjectA_LIBRARIES ${ProjectA_LIBRARY})
