@@ -6,7 +6,7 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SOURCES)
 include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(APPLE)
-  set(CMAKE_MACOSX_RPATH 0)
+  set(CMAKE_MACOSX_RPATH ON)
 endif()
 
 add_library(ProjectA SHARED ${SOURCES})

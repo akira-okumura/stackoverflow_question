@@ -11,8 +11,14 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SOURCES)
 include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(APPLE)
-  set(CMAKE_MACOSX_RPATH 0)
+  #set(CMAKE_MACOSX_RPATH ON)
+  set(MACOS_RPATH ON)
 endif()
+
+add_library(ProjectB SHARED ${SOURCES})
+target_link_libraries(ProjectB ${EXTLIBS})
+add_executable(exeB ${CMAKE_CURRENT_SOURCE_DIR}/exeB.cxx)
+target_link_libraries(exeB ProjectB ${EXTLIBS})
 
 find_package(SWIG REQUIRED)
 find_package(PythonLibs REQUIRED)
