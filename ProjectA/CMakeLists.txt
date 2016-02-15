@@ -6,8 +6,8 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SOURCES)
 include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(APPLE)
-  set(CMAKE_MACOSX_RPATH ON)
-endif()
+  set(CMAKE_MACOSX_RPATH TRUE)
+endif(APPLE)
 
 add_library(ProjectA SHARED ${SOURCES})
 install(TARGETS ProjectA LIBRARY DESTINATION lib COMPONENT library)
